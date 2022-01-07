@@ -1,0 +1,58 @@
+﻿<Window x:Class="TverrfagligDatabase.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TverrfagligDatabase"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="507">
+    <Grid>
+        <Border x:Name="AddButton" MouseDown="AddButton_MouseDown" Background="#FF7A7A7A" BorderBrush="Black" Margin="38,0,0,20" CornerRadius="3,3,3,3" HorizontalAlignment="Left" VerticalAlignment="Bottom" Height="31">
+            <Grid HorizontalAlignment="Center" VerticalAlignment="Center" Width="104">
+                <Label Content="Add client" HorizontalAlignment="Center" VerticalAlignment="Center" Foreground="White" FontWeight="DemiBold"/>
+            </Grid>
+            <Border.Triggers>
+                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="AddButton" Storyboard.TargetProperty="Background.Color" Duration="0:0:0.1" To="#9A9A9A"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="AddButton" Storyboard.TargetProperty="Background.Color" Duration="0:0:0.1" To="#7A7A7A"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+
+                <EventTrigger RoutedEvent="UIElement.MouseDown">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="AddButton" Storyboard.TargetProperty="Background.Color" Duration="0:0:0.1" To="#5A5A5A"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+                <EventTrigger RoutedEvent="UIElement.MouseUp">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <ColorAnimation Storyboard.TargetName="AddButton" Storyboard.TargetProperty="Background.Color" Duration="0:0:0.1" To="#9A9A9A"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </Border.Triggers>
+        </Border>
+        <ListBox x:Name="Listview" Margin="38,50,31,56"/>
+        <ComboBox HorizontalAlignment="Left" Margin="38,23,0,0" VerticalAlignment="Top" Width="189">
+            <Label Content="Lærer" Height="20" Margin="0" VerticalAlignment="Top" Padding="0" MouseDown="Label_MouseDown"/>
+            <Label Content="Elev" Height="20" Margin="0" VerticalAlignment="Top" Padding="0" MouseDown="Label_MouseDown"/>
+        </ComboBox>
+        <Label Content="Servere" HorizontalAlignment="Left" Margin="232,21,0,0" VerticalAlignment="Top" Width="106"/>
+        <TextBox x:Name="DeviceLabel" HorizontalAlignment="Left" Margin="157,390,0,0" TextWrapping="Wrap" Text="Device" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="NameLabel" HorizontalAlignment="Left" Margin="232,390,0,0" TextWrapping="Wrap" Text="Name" VerticalAlignment="Top" Width="70"/>
+        <TextBox x:Name="RoomLabel" HorizontalAlignment="Left" Margin="307,390,0,0" TextWrapping="Wrap" Text="Room" VerticalAlignment="Top" Width="70" TextChanged="TextBox_TextChanged"/>
+        <TextBox x:Name="ReturnDateLabel" HorizontalAlignment="Left" Margin="382,390,0,0" TextWrapping="Wrap" Text="Return date" VerticalAlignment="Top" Width="70"/>
+
+    </Grid>
+</Window>
